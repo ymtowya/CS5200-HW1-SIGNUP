@@ -3,7 +3,7 @@ import { Button, TextInput, View, Text } from "react-native";
 import Cardo from '../component/Cardo';
 
 function isValidEmail(e) {
-    var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    const validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
     return e.match(validRegex);
 }
 
@@ -15,12 +15,11 @@ export default function Starting(props) {
 
     const [ emailFaultFlg, setEmailFaultFlg ] = useState(false);
     const [ phoneFaultFlg, setPhoneFaultFlg ] = useState(false);
-    const { emailText, setEmailText, phoneText, setPhoneText } = props;
+    const { emailText, setEmailText, phoneText, setPhoneText, clearTxts } = props;
 
     // clear all values in text inputs
     const clearAll = function a1() {
-        setEmailText('');
-        setPhoneText('');
+        clearTxts();
         setEmailFaultFlg(false);
         setPhoneFaultFlg(false);
     }
@@ -39,7 +38,6 @@ export default function Starting(props) {
         // both valid -> jump
         if (boolE && boolP) {
             const screenSet = props.screenSet;
-            clearAll();
             screenSet(1);
         }
     };

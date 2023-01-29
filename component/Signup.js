@@ -10,6 +10,11 @@ export default function Signup() {
 
     let present;
 
+    const clearTxts = function f1() {
+        setEmailText('');
+        setPhoneText('');
+    }
+
     switch(screenState) {
         case 0:
             present = (
@@ -20,6 +25,7 @@ export default function Signup() {
                         phoneText={phoneText}
                         setEmailText={ t => setEmailText(t) }
                         setPhoneText={ t => setPhoneText(t) }
+                        clearTxts={ () => { clearTxts() } }
                     >
                     </Starting>
                 </View>
@@ -43,7 +49,7 @@ export default function Signup() {
             );
             break;
         default:
-            console.log("xx");
+            console.error("No element selected!");
             present = null;
             break;
     }
