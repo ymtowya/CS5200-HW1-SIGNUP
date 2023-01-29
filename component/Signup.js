@@ -1,9 +1,12 @@
 import { useState } from 'react';
-import { View } from 'react-native';
+import { View, Text, Button } from 'react-native';
+import Starting from '../screens/Starting';
 
 
 export default function Signup() {
-    const {screenState, setScreenState} = useState(0);
+    const [ screenState, setScreenState ] = useState(0);
+    const [ emailText, setEmailText ] = useState('');
+    const [ phoneText, setPhoneText ] = useState('');
 
     let present;
 
@@ -11,14 +14,24 @@ export default function Signup() {
         case 0:
             present = (
                 <View>
-
+                    <Starting 
+                        screenSet={ v => setScreenState(v) }
+                        emailText={emailText}
+                        phoneText={phoneText}
+                        setEmailText={ t => setEmailText(t) }
+                        setPhoneText={ t => setPhoneText(t) }
+                    >
+                    </Starting>
                 </View>
             );
             break;
         case 1:
             present = (
                 <View>
-
+                    <Text>
+                        Screen 2
+                    </Text>
+                    <Button title='Back' onPress={ () => { setScreenState(0) } }></Button>
                 </View>
             );
             break;
@@ -30,6 +43,7 @@ export default function Signup() {
             );
             break;
         default:
+            console.log("xx");
             present = null;
             break;
     }
