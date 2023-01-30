@@ -70,8 +70,8 @@ export default function Starting(props) {
                 </Text>
 
                 <View style={myStyling.buttonContainer}>
-                    <View style={[myStyling.buttons, myStyling.warningText]}>
-                        <Button title="Reset" onPress={onPressReset}></Button>
+                    <View style={myStyling.buttons}>
+                        <Button title="Reset" onPress={onPressReset} color={myStyling.buttonWarningColor}></Button>
                     </View>
                     <View style={myStyling.buttons}>
                         <Button title="Sign Up" onPress={onPressSignup}></Button>

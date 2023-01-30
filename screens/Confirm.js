@@ -44,14 +44,21 @@ export default function Confirm(props) {
                     </Text>
 
                     <View style={myStyling.buttonContainer}>
-                            <View style={[myStyling.buttons, myStyling.warningText]}>
-                                <Button title="Go back" onPress={ () => { goBackFunc(); } }></Button>
+                            <View style={myStyling.buttons}>
+                                <Button
+                                    title="Go back"
+                                    onPress={ () => { goBackFunc(); } }
+                                    color={myStyling.buttonWarningColor}
+                                ></Button>
                             </View>
                             <View style={myStyling.buttons}>
                                 <Button title="Confirm" onPress={ () => { confirmFunc(); } }></Button>
                             </View>
                             <View style={myStyling.buttons}>
-                                <Button title="Finish Later" onPress={ () => { finishLaterFunc(); } }></Button>
+                                <Button 
+                                    title="Finish Later" 
+                                    onPress={ () => { finishLaterFunc(); } }
+                                ></Button>
                             </View>
                     </View>
                 </Cardo>

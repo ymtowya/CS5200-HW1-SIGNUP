@@ -56,7 +56,8 @@ const myStyling = StyleSheet.create({
         width: 150,
         height: 150,
         alignSelf: 'center'
-    }
+    },
+    buttonWarningColor: 'red',
 
 });
 
