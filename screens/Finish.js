@@ -5,15 +5,11 @@ import Cardo from "../component/Cardo";
 export default function Finish(props) {
     const { phoneText, screenSet, confirmedState, clearTxts } = props;
 
-    let imgCmp;
-
     let hintCmp;
 
     const lastDigit = phoneText.length > 0 ? phoneText[phoneText.length - 1] : '';
 
     const imgUrl = `https://picsum.photos/id/${lastDigit}/100/100`;
-
-    console.log(imgUrl);
 
     const onPressStartAgain = function f1() {
         clearTxts();
@@ -26,35 +22,29 @@ export default function Finish(props) {
                 Thank you for signing up. Here's a picture for you (based on the last digit of your phone number).
             </Text>
         );
-        imgCmp = (
-            <View>
-                <Image
-                    source={{
-                        uri: imgUrl
-                    }}
-                ></Image>
-            </View>
-        );
     } else {
         hintCmp = (
             <Text>
                 Sorry to see you go.
             </Text>
         );
-        imgCmp = (
-            <View>
-                <Image
-                    source={ require('../resource/sad-smiley-face.png') }
-                ></Image>
-            </View>
-        );
     }
+
+    const imgSrc = confirmedState ? { uri: imgUrl } : require('../resource/sad-smiley-face.png');
 
     return (
         <View>
             <Cardo>
                 {hintCmp}
-                {imgCmp}
+                <View>
+                    <Image
+                        source={ imgSrc }
+                        style={{
+                            width: 120,
+                            height: 120,
+                        }}
+                    ></Image>
+                </View>
             </Cardo>
 
             <Button title="Start Again" onPress={ () => { onPressStartAgain() } }></Button>
