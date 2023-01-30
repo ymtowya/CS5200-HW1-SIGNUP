@@ -1,11 +1,12 @@
 import { Button, Image, Text, View } from "react-native";
 import Cardo from "../component/Cardo";
+import myStyling from "../resource/Styling";
 
 
 export default function Finish(props) {
     const { phoneText, screenSet, confirmedState, clearTxts } = props;
 
-    let hintCmp;
+    let hintTxt;
 
     const lastDigit = phoneText.length > 0 ? phoneText[phoneText.length - 1] : '';
 
@@ -17,17 +18,9 @@ export default function Finish(props) {
     };
 
     if (confirmedState) {
-        hintCmp = (
-            <Text>
-                Thank you for signing up. Here's a picture for you (based on the last digit of your phone number).
-            </Text>
-        );
+        hintTxt = "Thank you for signing up. Here's a picture for you (based on the last digit of your phone number).";
     } else {
-        hintCmp = (
-            <Text>
-                Sorry to see you go.
-            </Text>
-        );
+        hintTxt = "Sorry to see you go.";
     }
 
     const imgSrc = confirmedState ? { uri: imgUrl } : require('../resource/sad-smiley-face.png');
@@ -35,7 +28,9 @@ export default function Finish(props) {
     return (
         <View>
             <Cardo>
-                {hintCmp}
+                <Text style={myStyling.boldText}>
+                    {hintTxt}{"\n\n"}
+                </Text>
                 <View>
                     <Image
                         source={ imgSrc }

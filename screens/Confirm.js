@@ -1,5 +1,6 @@
 import { Button, Text } from "react-native";
 import Cardo from "../component/Cardo";
+import myStyling from "../resource/Styling";
 
 
 export default function Confirm(props) {
@@ -23,8 +24,8 @@ export default function Confirm(props) {
 
     return (
         <Cardo>
-            <Text>
-                You have entered:
+            <Text style={myStyling.boldText}>
+                You have entered: {"\n"}
             </Text>
             <Text>
                 {emailText}
@@ -32,8 +33,8 @@ export default function Confirm(props) {
             <Text>
                 {phoneText}
             </Text>
-            <Text>
-                Please confirm they are correct.
+            <Text style={myStyling.boldText}>
+            {"\n"}Please confirm they are correct.{"\n"}
             </Text>
             
             <Button title="Go back" onPress={ () => { goBackFunc(); } }></Button>

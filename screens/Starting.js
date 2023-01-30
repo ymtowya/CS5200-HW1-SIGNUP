@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Button, TextInput, View, Text } from "react-native";
 import Cardo from '../component/Cardo';
+import myStyling from "../resource/Styling";
 
 function isValidEmail(e) {
     const validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
@@ -15,7 +16,7 @@ export default function Starting(props) {
 
     const [ emailFaultFlg, setEmailFaultFlg ] = useState(false);
     const [ phoneFaultFlg, setPhoneFaultFlg ] = useState(false);
-    const { emailText, setEmailText, phoneText, setPhoneText, clearTxts } = props;
+    const { emailText, setEmailText, phoneText, setPhoneText, clearTxts, screenSet } = props;
 
     // clear all values in text inputs
     const clearAll = function a1() {
@@ -37,7 +38,6 @@ export default function Starting(props) {
         setPhoneFaultFlg(!boolP);
         // both valid -> jump
         if (boolE && boolP) {
-            const screenSet = props.screenSet;
             screenSet(1);
         }
     };
@@ -45,25 +45,27 @@ export default function Starting(props) {
     return (
         <View>
             <Cardo>
-                <Text>
+                <Text style={myStyling.boldText}>
                     Email address
                 </Text>
                 <TextInput
                     value={emailText}
                     onChangeText={ txt => setEmailText(txt.trim()) }
+                    style={ myStyling.inputBox }
                 ></TextInput>
-                <Text style={{opacity: emailFaultFlg ? 100 : 0}}>
+                <Text style={[myStyling.warningText, {opacity: emailFaultFlg ? 100 : 0}]}>
                     Please enter a valid email
                 </Text>
-
-                <Text>
-                    Phone number
+                
+                <Text style={myStyling.boldText}>
+                    {"\n"}Phone number
                 </Text>
                 <TextInput
                     value={phoneText}
                     onChangeText={ txt => setPhoneText(txt.trim()) }
+                    style={ myStyling.inputBox }
                 ></TextInput>
-                <Text style={{opacity: phoneFaultFlg ? 100 : 0}}>
+                <Text style={[myStyling.warningText, {opacity: phoneFaultFlg ? 100 : 0}]}>
                     Please enter a valid phone number
                 </Text>
                 
