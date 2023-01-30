@@ -4,7 +4,6 @@ import { StyleSheet } from "react-native";
 const myStyling = StyleSheet.create({
     myCardo: {
         justifyContent: 'center',
-        marginTop: 40,
         paddingVertical: 60,
         paddingHorizontal: 30,
         backgroundColor: '#FFF8DC',
@@ -33,6 +32,31 @@ const myStyling = StyleSheet.create({
     warningText: {
         color: 'red'
     },
+    container: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    backgroundLinear: {
+        position: 'absolute',
+        left: 0,
+        right: 0,
+        top: 0,
+        height: '100%'
+    },
+    buttonContainer: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+    },
+    buttons: {
+        marginHorizontal: 5,
+    },
+    image: {
+        justifyContent: 'center',
+        width: 150,
+        height: 150,
+        alignSelf: 'center'
+    }
 
 });
 

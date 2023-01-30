@@ -68,10 +68,15 @@ export default function Starting(props) {
                 <Text style={[myStyling.warningText, {opacity: phoneFaultFlg ? 100 : 0}]}>
                     Please enter a valid phone number
                 </Text>
-                
-                <Button title="Reset" onPress={onPressReset}></Button>
 
-                <Button title="Sign Up" onPress={onPressSignup}></Button>
+                <View style={myStyling.buttonContainer}>
+                    <View style={[myStyling.buttons, myStyling.warningText]}>
+                        <Button title="Reset" onPress={onPressReset}></Button>
+                    </View>
+                    <View style={myStyling.buttons}>
+                        <Button title="Sign Up" onPress={onPressSignup}></Button>
+                    </View>
+                </View>
 
             </Cardo>
         </View>

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { View, Text, Button, Modal } from 'react-native';
+import { View, Text, Button, Modal, SafeAreaView } from 'react-native';
 import Starting from '../screens/Starting';
 import Confirm from '../screens/Confirm';
 import Finish from '../screens/Finish';
@@ -23,27 +23,22 @@ export default function Signup() {
     const showConfirmPage = screenState == 1 ? true : false;
 
     confirmPage = (
-        <Modal
-            visible={ showConfirmPage }
-            transparent={true}
-            animationType={"fade"}
+        <Confirm
+            screenSet={ v => setScreenState(v) }
+            setConfirmedState={ (c) => { setConfirmedState(c) } }
+            emailText={emailText}
+            phoneText={phoneText}
+            clearTxts={ () => { clearTxts() } }
+            showConfirmPage={showConfirmPage}
         >
-            <Confirm
-                screenSet={ v => setScreenState(v) }
-                setConfirmedState={ (c) => { setConfirmedState(c) } }
-                emailText={emailText}
-                phoneText={phoneText}
-                clearTxts={ () => { clearTxts() } }
-            >
-            </Confirm>
-        </Modal>
+        </Confirm>
     );
 
     switch(screenState) {
         case 0:
         case 1:
             present = (
-                <View>
+                <SafeAreaView>
                     <Starting 
                         screenSet={ v => setScreenState(v) }
                         emailText={emailText}
@@ -55,7 +50,7 @@ export default function Signup() {
                     </Starting>
 
                     { confirmPage }
-                </View>
+                </SafeAreaView>
             );
             break;
         case 2:

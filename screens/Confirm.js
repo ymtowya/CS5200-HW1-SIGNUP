@@ -1,11 +1,11 @@
-import { Button, Text } from "react-native";
+import { Button, Modal, SafeAreaView, Text, View } from "react-native";
 import Cardo from "../component/Cardo";
 import myStyling from "../resource/Styling";
 
 
 export default function Confirm(props) {
 
-    const { emailText, phoneText, screenSet, setConfirmedState, clearTxts } = props;
+    const { emailText, phoneText, screenSet, setConfirmedState, clearTxts, showConfirmPage } = props;
 
     const goBackFunc = function f1() {
         screenSet(0);
@@ -23,25 +23,39 @@ export default function Confirm(props) {
     }
 
     return (
-        <Cardo>
-            <Text style={myStyling.boldText}>
-                You have entered: {"\n"}
-            </Text>
-            <Text>
-                {emailText}
-            </Text>
-            <Text>
-                {phoneText}
-            </Text>
-            <Text style={myStyling.boldText}>
-            {"\n"}Please confirm they are correct.{"\n"}
-            </Text>
-            
-            <Button title="Go back" onPress={ () => { goBackFunc(); } }></Button>
+        <Modal
+            visible={ showConfirmPage }
+            transparent={true}
+            style={{}}
+        >
+            <View style={ myStyling.container }>
+                <Cardo>
+                    <Text style={myStyling.boldText}>
+                        You have entered: {"\n"}
+                    </Text>
+                    <Text>
+                        {emailText}
+                    </Text>
+                    <Text>
+                        {phoneText}
+                    </Text>
+                    <Text style={myStyling.boldText}>
+                    {"\n"}Please confirm they are correct.{"\n"}
+                    </Text>
 
-            <Button title="Confirm" onPress={ () => { confirmFunc(); } }></Button>
-
-            <Button title="Finish Later" onPress={ () => { finishLaterFunc(); } }></Button>
-        </Cardo>
+                    <View style={myStyling.buttonContainer}>
+                            <View style={[myStyling.buttons, myStyling.warningText]}>
+                                <Button title="Go back" onPress={ () => { goBackFunc(); } }></Button>
+                            </View>
+                            <View style={myStyling.buttons}>
+                                <Button title="Confirm" onPress={ () => { confirmFunc(); } }></Button>
+                            </View>
+                            <View style={myStyling.buttons}>
+                                <Button title="Finish Later" onPress={ () => { finishLaterFunc(); } }></Button>
+                            </View>
+                    </View>
+                </Cardo>
+            </View>
+        </Modal>
     );
 }

@@ -34,10 +34,7 @@ export default function Finish(props) {
                 <View>
                     <Image
                         source={ imgSrc }
-                        style={{
-                            width: 120,
-                            height: 120,
-                        }}
+                        style={myStyling.image}
                     ></Image>
                 </View>
             </Cardo>
