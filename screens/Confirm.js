@@ -2,7 +2,7 @@ import { Button, Text } from "react-native";
 import Cardo from "../component/Cardo";
 
 
-export default function Starting(props) {
+export default function Confirm(props) {
 
     const { emailText, phoneText, screenSet, setConfirmedState, clearTxts } = props;
 
