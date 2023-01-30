@@ -1,21 +1,23 @@
-import { Button } from "react-native";
+import { Button, Text } from "react-native";
 import Cardo from "../component/Cardo";
 
 
 export default function Starting(props) {
 
-    const { emailText, phoneText, screenSet, clearTxts } = props;
+    const { emailText, phoneText, screenSet, setConfirmedState, clearTxts } = props;
 
     const goBackFunc = function f1() {
-        clearTxts();
         screenSet(0);
     }
 
     const confirmFunc = function f2() {
+        setConfirmedState(true);
         screenSet(2);
     }
 
     const finishLaterFunc = function f3() {
+        clearTxts();
+        setConfirmedState(false);
         screenSet(2);
     }
 

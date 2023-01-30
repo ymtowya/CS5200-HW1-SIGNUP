@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import { View, Text, Button } from 'react-native';
 import Starting from '../screens/Starting';
+import Confirm from '../screens/Confirm';
 
 
 export default function Signup() {
     const [ screenState, setScreenState ] = useState(0);
+    const [ confirmedState, setConfirmedState ] = useState(false);
     const [ emailText, setEmailText ] = useState('');
     const [ phoneText, setPhoneText ] = useState('');
 
@@ -34,17 +36,21 @@ export default function Signup() {
         case 1:
             present = (
                 <View>
-                    <Text>
-                        Screen 2
-                    </Text>
-                    <Button title='Back' onPress={ () => { setScreenState(0) } }></Button>
+                    <Confirm
+                        screenSet={ v => setScreenState(v) }
+                        setConfirmedState={ (c) => { setConfirmedState(c) } }
+                        emailText={emailText}
+                        phoneText={phoneText}
+                        clearTxts={ () => { clearTxts() } }
+                    >
+                    </Confirm>
                 </View>
             );
             break;
         case 2:
             present = (
                 <View>
-
+                    
                 </View>
             );
             break;
