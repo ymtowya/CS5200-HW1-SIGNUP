@@ -38,19 +38,21 @@ export default function Signup() {
         case 0:
         case 1:
             present = (
-                <SafeAreaView>
-                    <Starting 
-                        screenSet={ v => setScreenState(v) }
-                        emailText={emailText}
-                        phoneText={phoneText}
-                        setEmailText={ t => setEmailText(t) }
-                        setPhoneText={ t => setPhoneText(t) }
-                        clearTxts={ () => { clearTxts() } }
-                    >
-                    </Starting>
-
+                <View>
+                    <SafeAreaView>
+                        <Starting 
+                            screenSet={ v => setScreenState(v) }
+                            emailText={emailText}
+                            phoneText={phoneText}
+                            setEmailText={ t => setEmailText(t) }
+                            setPhoneText={ t => setPhoneText(t) }
+                            clearTxts={ () => { clearTxts() } }
+                        >
+                        </Starting>
+                    </SafeAreaView>
                     { confirmPage }
-                </SafeAreaView>
+                </View>
+                
             );
             break;
         case 2:

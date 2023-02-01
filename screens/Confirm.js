@@ -1,6 +1,7 @@
 import { Button, Modal, SafeAreaView, Text, View } from "react-native";
 import Cardo from "../component/Cardo";
 import myStyling from "../resource/Styling";
+import { LinearGradient } from 'expo-linear-gradient';
 
 
 export default function Confirm(props) {
@@ -25,9 +26,12 @@ export default function Confirm(props) {
     return (
         <Modal
             visible={ showConfirmPage }
-            transparent={true}
-            style={{}}
+            style={{flex: 1}}
         >
+            <LinearGradient
+        colors={['#1874CD', '#6E8B3D']}
+        style={myStyling.backgroundLinear}
+      ></LinearGradient>
             <View style={ myStyling.container }>
                 <Cardo>
                     <Text style={myStyling.boldText}>

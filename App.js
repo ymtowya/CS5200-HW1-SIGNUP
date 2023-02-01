@@ -5,7 +5,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import myStyling from './resource/Styling';
 
 export default function App() {
-  console.log("0");
+  // console.log("0");
   return (
     <View style={myStyling.container}>
       <LinearGradient
