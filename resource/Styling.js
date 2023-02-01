@@ -60,6 +60,8 @@ const myStyling = StyleSheet.create({
     colors: {
         buttonWarningColor: 'red',
         buttonNormalColor: '#007AFF',
+        bgColor1: '1874CD',
+        bgColor2: '6E8B3D',
     },
 
 });

@@ -9,7 +9,7 @@ export default function App() {
   return (
     <View style={myStyling.container}>
       <LinearGradient
-        colors={['#1874CD', '#6E8B3D']}
+        colors={[myStyling.colors.bgColor1, myStyling.colors.bgColor2]}
         style={myStyling.backgroundLinear}
       ></LinearGradient>
       <Signup></Signup>

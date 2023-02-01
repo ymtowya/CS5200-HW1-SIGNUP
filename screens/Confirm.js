@@ -30,7 +30,7 @@ export default function Confirm(props) {
             style={{flex: 1}}
         >
             <LinearGradient
-                colors={['#1874CD', '#6E8B3D']}
+                colors={[myStyling.colors.bgColor1, myStyling.colors.bgColor2]}
                 style={myStyling.backgroundLinear}
             ></LinearGradient>
             <View style={ myStyling.container }>
