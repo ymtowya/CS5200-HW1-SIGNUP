@@ -57,7 +57,10 @@ const myStyling = StyleSheet.create({
         height: 150,
         alignSelf: 'center'
     },
-    buttonWarningColor: 'red',
+    colors: {
+        buttonWarningColor: 'red',
+        buttonNormalColor: '#007AFF',
+    },
 
 });
 

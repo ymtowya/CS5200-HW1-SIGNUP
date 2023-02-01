@@ -1,13 +1,16 @@
 import { useState } from "react";
 import { Button, TextInput, View, Text } from "react-native";
 import Cardo from '../component/Cardo';
+import HorizontalButton from "../component/HorizontalButton";
 import myStyling from "../resource/Styling";
 
+// check if the email address is valid or not
 function isValidEmail(e) {
     const validRegex = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
     return e.match(validRegex);
 }
 
+// check if the phone number is valid or not
 function isValidPhone(p) {
     return p.length == 10 && !isNaN(p);
 }
@@ -70,12 +73,16 @@ export default function Starting(props) {
                 </Text>
 
                 <View style={myStyling.buttonContainer}>
-                    <View style={myStyling.buttons}>
-                        <Button title="Reset" onPress={onPressReset} color={myStyling.buttonWarningColor}></Button>
-                    </View>
-                    <View style={myStyling.buttons}>
-                        <Button title="Sign Up" onPress={onPressSignup}></Button>
-                    </View>
+                    <HorizontalButton
+                        title={"Reset"}
+                        onPress={() => {onPressReset();}}
+                        isWarning={true}
+                    ></HorizontalButton>
+                    <HorizontalButton
+                        title={"Sign Up"}
+                        onPress={() => {onPressSignup();}}
+                        isWarning={false}
+                    ></HorizontalButton>
                 </View>
 
             </Cardo>
