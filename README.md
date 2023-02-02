@@ -12,3 +12,6 @@
 
 * Screenshot of the App:
 
+![Starting](./resource/screenshot-1.png)
+![Confirm](./resource/screenshot-2.png)
+![Finish](./resource/screenshot-3.png)
