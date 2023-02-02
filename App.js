@@ -1,11 +1,10 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import Signup from './component/Signup';
+import Signup from './main/Signup';
 import { LinearGradient } from 'expo-linear-gradient';
 import myStyling from './resource/Styling';
 
 export default function App() {
-  // console.log("0");
   return (
     <View style={myStyling.container}>
       <LinearGradient
