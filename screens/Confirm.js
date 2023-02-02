@@ -24,6 +24,7 @@ export default function Confirm(props) {
         screenSet(2);
     }
 
+    // Wrapped in a Modal
     return (
         <Modal
             visible={ showConfirmPage }
