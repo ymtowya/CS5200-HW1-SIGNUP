@@ -9,6 +9,7 @@
 - [X] Has 2 components: Cardo & HorizontalButton
 - [X] Shows correct pic (there might be latency when loading the image though)
 - [X] all buttons work correctly, and the inputs are kept / erased according to the requirement
+- [X] Tested on both Android and iOS phones
 
 * Screenshot of the App:
 
