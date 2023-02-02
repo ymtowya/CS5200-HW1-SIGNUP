@@ -12,6 +12,6 @@
 
 * Screenshot of the App:
 
-![Starting](./resource/screenshot-1.png)
-![Confirm](./resource/screenshot-2.png)
-![Finish](./resource/screenshot-3.png)
+<img src="./resource/screenshot-1.png" alt= "Starting" height="100">
+<img src="./resource/screenshot-2.png" alt= "Confirm" height="200">
+<img src="./resource/screenshot-3.png" alt= "Finish" height="300">
