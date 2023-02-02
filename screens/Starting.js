@@ -47,6 +47,11 @@ export default function Starting(props) {
 
     return (
         <View>
+            <View style={myStyling.textLabelView}>
+                <Text style={myStyling.textLabel}>
+                    Sign Up
+                </Text>
+            </View>
             <Cardo>
                 <Text style={myStyling.boldText}>
                     Email address

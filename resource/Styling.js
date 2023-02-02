@@ -51,6 +51,20 @@ const myStyling = StyleSheet.create({
     buttons: {
         marginHorizontal: 5,
     },
+    textLabelView: {
+        borderWidth: 2,
+        borderColor: 'blue',
+        marginBottom: 30,
+        padding: 15,
+        alignItems: 'center',
+        position: 'relative',
+        left: '20%',
+        width: '60%'
+    },
+    textLabel: {
+        color: '#FFFFFF',
+        fontWeight: 'bold',
+    },
     image: {
         justifyContent: 'center',
         width: 150,
